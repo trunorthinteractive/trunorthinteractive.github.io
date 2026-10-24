@@ -159,8 +159,14 @@ footer .social svg { width: 28px; height: 28px; fill: currentColor; shape-render
 @media (max-width: 640px) { .shots { grid-template-columns: 1fr; } }
 .shots .wide { grid-column: 1 / -1; }
 .mrk1 .cta { margin-top: 24px; }
-.about .portrait { float: left; width: 160px; height: 160px; margin: 4px 24px 12px 0; border: 2px solid var(--slate); }
-.about::after { content: ""; display: block; clear: both; }
-@media (max-width: 640px) { .about .portrait { float: none; display: block; margin: 0 auto 16px; } }
 .hero p.mantra { font-family: "Silkscreen", monospace; color: var(--aurora); font-size: 1.3rem; letter-spacing: 0.06em; margin-top: 20px; }
 .hero p.mantra + p { margin-top: 6px; }
+.pillars { list-style: none; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.pillars li { background: rgba(56, 62, 76, 0.55); border: 2px solid var(--slate); padding: 16px; }
+.pillars h3 { margin: 0 0 6px; color: var(--aurora); }
+.pillars p { margin: 0; color: var(--mist); }
+.founder { display: flex; gap: 24px; align-items: center; background: rgba(56, 62, 76, 0.55); border: 2px solid var(--slate); padding: 20px; }
+.founder .portrait { width: 160px; height: 160px; flex: none; border: 2px solid var(--slate); }
+.founder h3 { margin: 0; font-size: 1.4rem; }
+.founder .role { margin: 0 0 8px; color: var(--aurora); font-family: "Silkscreen", monospace; }
+@media (max-width: 640px) { .pillars { grid-template-columns: 1fr; } .founder { flex-direction: column; text-align: center; } }
