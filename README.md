@@ -9,7 +9,7 @@ https://trunorthinteractive.github.io.
 | --- | --- | --- |
 | `/` | `index.html` | Studio homepage: logo, games list. |
 | `/mrk1/` | `mrk1/index.html` | MRK1 game page: key art, wishlist button, about, screenshots. |
-| `/about/` | `about/index.html` | About the studio. |
+| `/about/` | `about/index.html` | About the studio and Matthew Church. |
 
 ## Layout
 
