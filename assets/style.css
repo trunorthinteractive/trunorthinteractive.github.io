@@ -174,3 +174,9 @@ footer .social svg { width: 28px; height: 28px; fill: currentColor; shape-render
 .founder .ring .portrait { width: 100%; height: 100%; border-radius: 50%; border: 4px solid var(--night-deep); display: block; object-fit: cover; animation: ring-spin 12s linear infinite reverse; }
 @keyframes ring-spin { to { transform: rotate(360deg); } }
 @media (prefers-reduced-motion: reduce) { .founder .ring, .founder .ring .portrait { animation: none; } }
+.studio { display: grid; grid-template-columns: 1.1fr 1fr; gap: 32px; align-items: center; }
+.studio .mantra { font-family: "Silkscreen", monospace; color: var(--aurora); font-size: 1.8rem; line-height: 1.25; letter-spacing: 0.06em; margin: 0 0 8px; text-shadow: 0 0 18px rgba(124, 255, 94, 0.35); }
+.studio .where { color: var(--mist); margin: 0 0 16px; }
+.studio .pillars { grid-template-columns: 1fr; margin: 0; }
+@media (max-width: 640px) { .studio { grid-template-columns: 1fr; } }
+main.pad-top { padding-top: 24px; }
