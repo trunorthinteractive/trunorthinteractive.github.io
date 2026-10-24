@@ -180,3 +180,5 @@ footer .social svg { width: 28px; height: 28px; fill: currentColor; shape-render
 .studio .pillars { grid-template-columns: 1fr; margin: 0; }
 @media (max-width: 640px) { .studio { grid-template-columns: 1fr; } }
 main.pad-top { padding-top: 24px; }
+.team .founder { justify-content: center; padding: 32px; }
+.team .founder .ring { width: 220px; height: 220px; }
