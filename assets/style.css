@@ -159,6 +159,3 @@ footer .social svg { width: 28px; height: 28px; fill: currentColor; shape-render
 @media (max-width: 640px) { .shots { grid-template-columns: 1fr; } }
 .shots .wide { grid-column: 1 / -1; }
 .mrk1 .cta { margin-top: 24px; }
-.about .portrait { float: left; width: 160px; height: 160px; margin: 0 24px 12px 0; border: 2px solid var(--slate); }
-.about::after { content: ""; display: block; clear: both; }
-@media (max-width: 640px) { .about .portrait { float: none; display: block; margin: 0 auto 16px; } }
