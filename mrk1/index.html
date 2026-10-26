@@ -28,6 +28,13 @@
       <h1>MRK<span class="one">1</span></h1>
       <p class="tag">A Roguelite Narrative Puzzle Thriller.</p>
       <img class="key-art" src="../assets/mrk1-capsule.png" alt="MRK1: a monitor in the middle of a ring of boss-persona monitors, one glitched, above the MRK1 logo">
+      <ul class="facts">
+        <li>Roguelite deck-builder</li>
+        <li>Turn-based strategy &amp; puzzle</li>
+        <li>Pixel &amp; glitch art</li>
+        <li>Single-player</li>
+        <li>Steam Deck &amp; full controller support</li>
+      </ul>
       <p class="cta">
         <!-- TODO: set the Steam store URL once the page is live -->
         <a class="button" href="#">Wishlist on Steam</a>
@@ -37,11 +44,33 @@
     <section>
       <h2>About</h2>
       <p>MRK1 is an abandoned game simulator that finally has someone to play. Bend the rules, stack multipliers into huge combos, and pick your trade-offs in every shop. The further you go, the more it wants to know about the protocols it was trained to run.</p>
-      <ul class="features">
-        <li>Draft multipliers and slot custom ROM chips.</li>
-        <li>Chain scoring lines into combos to beat the target before turns run out.</li>
-        <li>Outscore a rogue simulator that mutates the rules and degrades further with each run.</li>
-      </ul>
+      <div class="features">
+        <div class="feature">
+          <video src="../assets/mrk1-boot_menu.webm" poster="../assets/mrk1-boot_menu.jpg" muted loop playsinline preload="none" aria-label="The boot terminal starts MRK1 and the title menu sharpens into colour"></video>
+          <div><h3>TURN THE KEY</h3><p>It's bored, it's locked in, and it finally has someone to play. What could it hurt?</p></div>
+        </div>
+        <div class="feature">
+          <video src="../assets/mrk1-drafting_combos.webm" poster="../assets/mrk1-drafting_combos.jpg" muted loop playsinline preload="none" aria-label="A line scores with the combo climbing, then one big move adds up on a crowded board"></video>
+          <div><h3>BREAK THE GAME</h3><p>Bend the rules. Stack multipliers on top of your combo, finish two lines with one piece, and turn the bosses against themselves.</p></div>
+        </div>
+        <div class="feature">
+          <video src="../assets/mrk1-rom_injector.webm" poster="../assets/mrk1-rom_injector.jpg" muted loop playsinline preload="none" aria-label="A ROM chip is bought in the shop, then fires on the next line"></video>
+          <div><h3>PLAY YOUR WAY</h3><p>Each shop changes your run. Build around bonuses, shields or veterans, and pick ROM chips that trade something away for a new way to play.</p></div>
+        </div>
+        <div class="feature">
+          <video src="../assets/mrk1-tactical_map.webm" poster="../assets/mrk1-tactical_map.jpg" muted loop playsinline preload="none" aria-label="A stop is picked on the route map and the road lights up to it"></video>
+          <div><h3>CHART YOUR ROUTE</h3><p>Take the safe road or the greedy one. Harder fights pay more.</p></div>
+        </div>
+        <div class="feature">
+          <video src="../assets/mrk1-boss_mechanics.webm" poster="../assets/mrk1-boss_mechanics.jpg" muted loop playsinline preload="none" aria-label="The Warden cages a piece, then the Sprawl's board grows"></video>
+          <div><h3>UNHINGED DOCTRINES</h3><p>MRK1 runs protocols from its training, each one rewriting the rules of the board.</p></div>
+        </div>
+        <div class="feature">
+          <video src="../assets/mrk1-mrk1_glitch.webm" poster="../assets/mrk1-mrk1_glitch.jpg" muted loop playsinline preload="none" aria-label="MRK1's cage breaks away, then a board tears into a question for the player"></video>
+          <div><h3>IT HAS QUESTIONS</h3><p>It asks you the questions its protocols never would. Every answer you give teaches it to doubt what it was taught.</p></div>
+        </div>
+      </div>
+      <p class="more"><strong>More to play:</strong> five difficulties from Story to Brutal, seeded runs, endless mode, and full controller support for Steam Deck.</p>
     </section>
 
     <section>
@@ -70,5 +99,20 @@
     </p>
     &copy; 2026 TruNorth Interactive. All rights reserved.
   </footer>
+  <script>
+    // Clips play only while on screen, and not at all for reduced motion (tap to play instead).
+    (function () {
+      var clips = document.querySelectorAll(".feature video");
+      var still = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+      clips.forEach(function (v) { if (still) v.controls = true; });
+      if (still || !("IntersectionObserver" in window)) return;
+      var seen = new IntersectionObserver(function (entries) {
+        entries.forEach(function (e) {
+          if (e.isIntersecting) { e.target.play().catch(function () {}); } else { e.target.pause(); }
+        });
+      }, { threshold: 0.4 });
+      clips.forEach(function (v) { seen.observe(v); });
+    })();
+  </script>
 </body>
 </html>
