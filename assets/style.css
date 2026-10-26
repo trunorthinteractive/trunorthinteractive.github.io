@@ -194,3 +194,11 @@ footer .social svg { width: 28px; height: 28px; fill: currentColor; shape-render
 main.pad-top { padding-top: 24px; }
 .team .founder { justify-content: center; padding: 32px; }
 .team .founder .ring { width: 220px; height: 220px; }
+
+/* Press kit */
+.factsheet { display: grid; grid-template-columns: max-content 1fr; gap: 0.4rem 1.2rem; margin: 0; }
+.factsheet dt { opacity: 0.7; }
+.factsheet dd { margin: 0; }
+.highlights { padding-left: 1.2rem; }
+.highlights li { margin-bottom: 0.6rem; }
+@media (max-width: 640px) { .factsheet { grid-template-columns: 1fr; } .factsheet dd { margin-bottom: 0.5rem; } }
