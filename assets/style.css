@@ -204,3 +204,11 @@ main.pad-top { padding-top: 24px; }
 .highlights li { margin-bottom: 0.6rem; }
 @media (max-width: 640px) { .factsheet { grid-template-columns: 1fr; } .factsheet dd { margin-bottom: 0.5rem; } }
 footer .press { margin: 0 0 8px; }
+
+/* Trailer: poster button swapped for the player on click */
+.trailer { display: block; position: relative; width: 100%; aspect-ratio: 16 / 9; padding: 0; border: 2px solid var(--mist); background: #000; cursor: pointer; }
+.trailer img { width: 100%; height: 100%; object-fit: cover; display: block; image-rendering: pixelated; }
+.trailer .play { position: absolute; left: 50%; top: 50%; width: 72px; height: 72px; margin: -36px 0 0 -36px; background: var(--mrk-red); border: 2px solid #ffb0b0; }
+.trailer .play::after { content: ""; position: absolute; left: 28px; top: 20px; border-left: 22px solid #fff; border-top: 16px solid transparent; border-bottom: 16px solid transparent; }
+.trailer:hover .play, .trailer:focus-visible .play { background: #ff8f8f; }
+.trailer-link { text-align: center; }

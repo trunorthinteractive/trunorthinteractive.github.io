@@ -52,6 +52,16 @@
     </div>
 
     <section>
+      <h2>Trailer</h2>
+      <!-- Click-to-load: nothing from YouTube loads until the player is pressed. -->
+      <button class="trailer" type="button" data-id="LDGQDq8KA5M" aria-label="Play the MRK1 trailer">
+        <img src="../assets/mrk1-shot-0.png" alt="" loading="lazy">
+        <span class="play" aria-hidden="true"></span>
+      </button>
+      <p class="trailer-link"><a href="https://youtu.be/LDGQDq8KA5M" target="_blank" rel="noopener">Watch on YouTube</a></p>
+    </section>
+
+    <section>
       <h2>About</h2>
       <p>MRK1 is an abandoned game simulator that finally has someone to play. Bend the rules, stack multipliers into huge combos, and pick your trade-offs in every shop. The further you go, the more it wants to know about the protocols it was trained to run.</p>
       <div class="features">
@@ -115,6 +125,18 @@
     <a href="../privacy/">Privacy</a> · &copy; 2026 TruNorth Interactive. All rights reserved.
   </footer>
   <script>
+    // Trailer loads the YouTube player only when pressed.
+    document.querySelectorAll(".trailer").forEach(function (b) {
+      b.addEventListener("click", function () {
+        var f = document.createElement("iframe");
+        f.src = "https://www.youtube-nocookie.com/embed/" + b.dataset.id + "?autoplay=1&rel=0";
+        f.title = "MRK1 trailer";
+        f.allow = "autoplay; encrypted-media; picture-in-picture; fullscreen";
+        f.allowFullscreen = true;
+        f.className = "trailer";
+        b.replaceWith(f);
+      });
+    });
     // Clips play only while on screen.
     (function () {
       var clips = document.querySelectorAll(".feature video");
