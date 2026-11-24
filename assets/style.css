@@ -268,7 +268,23 @@ main.pad-top { padding-top: 24px; }
 .factsheet dd { margin: 0; }
 .highlights { padding-left: 1.2rem; }
 .highlights li { margin-bottom: 0.6rem; }
-@media (max-width: 640px) { .factsheet { grid-template-columns: 1fr; } .factsheet dd { margin-bottom: 0.5rem; } }
+.press-zips { display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; margin: 16px 0 24px; }
+.press-zips .zip {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  padding: 10px 14px;
+  background: rgba(56, 62, 76, 0.55);
+  border: 2px solid var(--slate);
+  color: var(--snow);
+  text-decoration: none;
+  transition: border-color 0.15s, transform 0.15s;
+}
+.press-zips .zip:hover { border-color: var(--mrk-red); transform: translateY(-2px); color: var(--snow); }
+.press-zips .zip strong { color: var(--aurora); font-weight: 600; }
+.press-zips .zip:hover strong { color: var(--mrk-red); }
+.press-zips .zip span { color: var(--mist); font-size: 0.8rem; }
+@media (max-width: 640px) { .factsheet { grid-template-columns: 1fr; } .factsheet dd { margin-bottom: 0.5rem; } .press-zips { grid-template-columns: repeat(2, 1fr); } }
 footer .press { margin: 0 0 8px; }
 
 /* Trailer: poster button swapped for the player on click */
